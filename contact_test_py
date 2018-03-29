@@ -1,0 +1,53 @@
+import unittest
+from contact import UserData
+class TestUserData(unittest.TestCase):
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_contact = UserData("ObiWan","kenobi") # create contact object
+
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_contact.name,"ObiWan")
+        self.assertEqual(self.new_contact.password,"kenobi")
+    def test_save_contact(self):
+        '''
+        test_save_contact test case to test if the contact object is saved into
+         the contact list
+        '''
+        self.new_contact.save_contact() # saving the new contact
+        self.assertEqual(len(UserData.contact_list),1)
+
+    def test_save_multiple_contact(self):
+            '''
+            test_save_multiple_contact to check if we can save multiple contact
+            objects to our contact_list
+            '''
+            self.new_contact.save_contact()
+            test_contact = UserData("Test","user","0712345678","test@user.com") # new contact
+            test_contact.save_contact()
+            self.assertEqual(len(UserData.contact_list),2)
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            UserData.contact_list = []
+
+    def test_save_multiple_contact(self):
+            '''
+            test_save_multiple_contact to check if we can save multiple contact
+            objects to our contact_list
+            '''
+            self.new_contact.save_contact()
+            test_contact = UserData("Test","user")# new contact
+            test_contact.save_contact()
+            self.assertEqual(len(UserData.contact_list),2)
+           
+
+if __name__ == '__main__':
+    unittest.main()
+

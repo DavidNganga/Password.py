@@ -10,7 +10,15 @@ class UserData:
             number: New contact phone number.
             email : New contact email address.
     '''
-        
+    
+    def save_contact(self):
+
+        '''
+        save_contact method saves contact objects into contact_list
+        '''
+
+        UserData.contact_list.append(self)  
+
     def __init__(self,name,password):
 
         self.name = name
