@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
 from contact import UserData
-
+import random
 def create_contact(name,password):
     '''
     Function to create a new contact
@@ -32,7 +32,8 @@ def display_contacts():
     '''
     return UserData.display_contacts()  
 
-
+def login(username,password):
+    return UserData.login_contact()    
        
 def main():
     print("Hello Welcome to your contact list. What is your name?")
@@ -42,7 +43,7 @@ def main():
     print('\n')
 
     while True:
-                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list, lg -log in ")
 
                     short_code = input().lower()
 
@@ -89,12 +90,28 @@ def main():
 
                             else:
                                     print("That contact does not exist")
+                    elif short_code == 'lg':
+                            print ("Enter username and password")              
+                            print ("name ....")
+                            name = input()
+
+                            print ("password")
+                            password = input()
+                            print("Login successful")
 
                     elif short_code == "ex":
                             print("Bye .......")
                             break
                     else:
                             print("I really didn't get that. Please use the short codes")
+
+
+                           
+
+s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+passlen = 8
+p =  "".join(random.sample(s,passlen ))
+print (p)   
 if __name__ == '__main__':
 
     main()                            
