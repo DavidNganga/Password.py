@@ -1,11 +1,20 @@
 #!/usr/bin/env python3.6
 from contact import UserData
+from cred import CredData
+
 import random
 def create_contact(name,password):
     '''
     Function to create a new contact
     '''
     new_contact = UserData(name,password)
+    return new_contact
+
+def create_contact(social_media,password):
+    '''
+    Function to create a new contact
+    '''
+    new_contact = CredData(social_media,password)
     return new_contact
 
 def save_contacts(contact):
@@ -43,7 +52,7 @@ def main():
     print('\n')
 
     while True:
-                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list, lg -log in ")
+                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, lg -log in, gp - generate password, ex -exit the contact list ")
 
                     short_code = input().lower()
 
@@ -99,6 +108,11 @@ def main():
                             password = input()
                             print("Login successful")
 
+                    elif short_code == 'gp':
+                            print("Enter social media platform to generate password for...")
+                            social_media = input()
+                
+
                     elif short_code == "ex":
                             print("Bye .......")
                             break
@@ -108,10 +122,7 @@ def main():
 
                            
 
-s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
-passlen = 8
-p =  "".join(random.sample(s,passlen ))
-print (p)   
+
 if __name__ == '__main__':
 
     main()                            

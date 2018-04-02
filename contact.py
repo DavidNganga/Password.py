@@ -11,10 +11,10 @@ class UserData:
         __init__ method that helps us define properties for our objects.
 
          Args:
-            name: New contacname.
-            last_name : New contact last name.
-            number: New contact phone number.
-            email : New contact email address.
+            name: New contactname.
+            
+            password: New contact password.
+            
         '''
     
     def save_contact(self):
@@ -61,4 +61,36 @@ class UserData:
         '''
         return cls.contact_list 
     
- 
+ # Login authorization
+    def loginauth(username, password):
+        if username in users:
+            if password == users[username]["password"]:
+                print("Login successful")
+            return True
+        return False
+
+# Login
+    def login():
+        while True:
+            username = input("Username: ")
+        if not len(username) > 0:
+            
+            print("Username can't be blank")
+                
+        else:
+            
+            while True:
+                password = input("Password: ")
+        if not len(password) > 0:
+            print("Password can't be blank")
+            
+        else:
+            '''
+            if loginauth(username, password):
+                return session(username)
+            
+        else:
+                print("Invalid username or password")
+                '''
+            
+           
