@@ -15,4 +15,11 @@ class CredData:
             password : New contact password.
           
         '''
+    def save_contact(self):
+
+        '''
+        save_contact method saves contact objects into contact_list
+        '''
+
+        CredData.contact_list.append(self)     
   
