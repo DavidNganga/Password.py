@@ -1,6 +1,6 @@
 class CredData:
 
-    contact_list = []
+    cred_list = []
     def __init__(self,social_media,password):
         self.social_media = social_media
         
@@ -15,11 +15,11 @@ class CredData:
             password : New contact password.
           
         '''
-    def save_contact(self):
+    def save_cred(self):
 
         '''
         save_contact method saves contact objects into contact_list
         '''
-
-        CredData.contact_list.append(self)     
+        print("cred run")
+        CredData.cred_list.append(self)     
   

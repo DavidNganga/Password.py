@@ -22,7 +22,7 @@ class UserData:
         '''
         save_contact method saves contact objects into contact_list
         '''
-
+        print("cl run")
         UserData.contact_list.append(self) 
     @classmethod
 

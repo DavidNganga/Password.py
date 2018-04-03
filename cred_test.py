@@ -14,16 +14,16 @@ class TestCredData(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_contact.social_media,"twitter")
-        self.assertEqual(self.new_contact.password,"kenobi")
+        self.assertEqual(self.new_cred.social_media,"twitter")
+        self.assertEqual(self.new_cred.password,"kenobi")
 
-    def test_save_contact(self):
+    def test_save_cred(self):
         '''
         test_save_contact test case to test if the contact object is saved into
          the contact list
         '''
-        self.new_contact.save_contact() # saving the new contact
-        self.assertEqual(len(CredData.contact_list),1)
+        self.new_cred.save_contact() # saving the new contact
+        self.assertEqual(len(CredData.cred_list),1)
     
 
 

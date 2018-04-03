@@ -9,19 +9,23 @@ def create_contact(name,password):
     '''
     new_contact = UserData(name,password)
     return new_contact
+    
 
-def create_contact(social_media,password):
+def create_cred(social_media,password):
     '''
     Function to create a new contact
     '''
-    new_contact = CredData(social_media,password)
-    return new_contact
+    new_cred = CredData(social_media,password)
+    return new_cred
 
 def save_contacts(contact):
     '''
     Function to save contact
     '''
+    print("cr run")
     contact.save_contact()
+
+
 
 def find_contact(name):
     '''
@@ -52,7 +56,7 @@ def main():
     print('\n')
 
     while True:
-                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, lg -log in, gp - generate password, ex -exit the contact list ")
+                    print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact,  gp - generate password, ex -exit the contact list ")
 
                     short_code = input().lower()
 
@@ -72,6 +76,7 @@ def main():
                             print(f"New Contact {name} {password} created")
                             print ('\n')
                             print ("created contact successfully...")
+                    
                     elif short_code == 'dc':
 
                             if display_contacts():
@@ -110,11 +115,21 @@ def main():
 
                     elif short_code == 'gp':
                             print("Enter social media platform to generate password for...")
+
                             social_media = input()
-                            s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
-                            passlen = 8
-                            p =  "".join(random.sample(s,passlen ))
-                            print (p)   
+                            print("Generate password? y/n")
+                            if input() == "y":  
+                                letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                                how_many = len(letters)
+                                print("How long would you like your password to be? ")
+                                print(f"p.s: Maximum length of password is {how_many}")
+                                lent = int(input())
+                                password = "".join(random.sample(letters, lent))
+                                print(f"Your password has {lent} characters ")
+                                print(password)
+                            else:
+                                    print("input password...")
+                                    password = input()  
 
                     elif short_code == "ex":
                             print("Bye .......")
