@@ -111,7 +111,10 @@ def main():
                     elif short_code == 'gp':
                             print("Enter social media platform to generate password for...")
                             social_media = input()
-                
+                            s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                            passlen = 8
+                            p =  "".join(random.sample(s,passlen ))
+                            print (p)   
 
                     elif short_code == "ex":
                             print("Bye .......")
