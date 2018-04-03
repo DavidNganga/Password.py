@@ -65,13 +65,13 @@ def main():
 
                             print ("password")
                             password = input()
-
+                       
 
                             save_contacts(create_contact(name,password)) # create and save new contact.
                             print ('\n')
                             print(f"New Contact {name} {password} created")
                             print ('\n')
-
+                            print ("created contact successfully...")
                     elif short_code == 'dc':
 
                             if display_contacts():
