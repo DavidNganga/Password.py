@@ -21,5 +21,12 @@ class CredData:
         save_contact method saves contact objects into contact_list
         '''
         print("cred run")
-        CredData.cred_list.append(self)     
+        CredData.cred_list.append(self)    
+
+    classmethod
+    def display_cred(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.cred_list      
   

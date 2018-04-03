@@ -22,10 +22,17 @@ class TestCredData(unittest.TestCase):
         test_save_contact test case to test if the contact object is saved into
          the contact list
         '''
-        self.new_cred.save_contact() # saving the new contact
+        self.new_cred.save_cred() # saving the new cred
         self.assertEqual(len(CredData.cred_list),1)
     
+    def test_display_all_cred(self):
+        '''
+        method that returns a list of all contacts saved
+        '''
 
+        self.assertEqual(CredData.display_cred(),CredData.cred_list) 
+
+        
 
 if __name__ == '__main__':
     unittest.main()        

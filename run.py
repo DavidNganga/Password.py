@@ -18,11 +18,16 @@ def create_cred(social_media,password):
     new_cred = CredData(social_media,password)
     return new_cred
 
+def save_cred(cred):
+    '''
+    Function to save cred
+    '''
+    cred.save_cred()    
+
 def save_contacts(contact):
     '''
     Function to save contact
     '''
-    print("cr run")
     contact.save_contact()
 
 
